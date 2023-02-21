@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class SoulBehavior : MonoBehaviour
 {
-    [SerializeField] private float _speed = 10f;
-    
+    private ParticleSystem _soulFlow;
+    [SerializeField] private EarthManager _earthManager = null;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        _soulFlow = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        Vector3 dir = transform.forward;
-        transform.position += dir.normalized * _speed * Time.deltaTime;
-        
+        ParticleSystem.EmissionModule soulFlowEmission = _soulFlow.emission;
+        soulFlowEmission.rateOverTime = _earthManager.HumanProductionRate;
     }
 }
