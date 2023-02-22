@@ -31,18 +31,21 @@ public class DoorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         if (_isSelected)
         {
             if (Input.GetKeyDown(KeyCode.A)) //Increase Angle Door
             {
                 Index++;
+                Debug.Log(_doorThresholds[Index]);
             }
 
             if (Input.GetKeyDown(KeyCode.E)) //Decrease Angle Door
             {
                 Index--;
+                Debug.Log(_doorThresholds[Index]);
             }
         }
+        
     }
 }
