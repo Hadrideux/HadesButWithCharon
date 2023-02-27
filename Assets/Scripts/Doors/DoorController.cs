@@ -4,48 +4,66 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    [SerializeField] private float[] _doorThresholds = null;
+    [SerializeField] private int[] _doorThresholds = null;
+    private int _thresholds = 0;
     private int _index = 0;
     private bool _isSelected = false;
+    [SerializeField] private GameObject _doorObject = null;
 
-    public float CurrentFlow => _doorThresholds[_index];
+    #region Properties
+
+    public int CurrentFlow => _doorThresholds[_index];
+
+    public int CurrentTresholds
+    {
+        get => _thresholds;
+        set => _thresholds = Mathf.Clamp(value, 0, _doorThresholds.Length);
+    }
+
 
     public bool IsSelected
     {
         get => _isSelected;
-        set => _isSelected = true;
+        set => _isSelected = value;
     }
 
     private int Index
     {
         get => _index;
-        set => _index = Mathf.Clamp(value, 0, _doorThresholds.Length);
+        set => _index = Mathf.Clamp(value, 0, _doorThresholds.Length - 1);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    #endregion Properties
 
     // Update is called once per frame
     void Update()
     {
-        
+        OpenDoor();
+    }
+
+    private void OpenDoor()
+    {
         if (_isSelected)
         {
-            if (Input.GetKeyDown(KeyCode.A)) //Increase Angle Door
+            if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase Angle Door
             {
                 Index++;
-                Debug.Log(_doorThresholds[Index]);
+                DoorAngle();
             }
 
-            if (Input.GetKeyDown(KeyCode.E)) //Decrease Angle Door
+            if (Input.GetKeyDown(KeyCode.DownArrow)) //Decrease Angle Door
             {
                 Index--;
-                Debug.Log(_doorThresholds[Index]);
+                DoorAngle();
             }
         }
-        
     }
+
+    private void DoorAngle()
+    {
+        float newAngle = _doorThresholds[Index] * 90 / 100;
+        Vector3 rotation = new Vector3(0, 0, newAngle);
+        _doorObject.transform.rotation = Quaternion.Euler(rotation);
+    }
+
 }

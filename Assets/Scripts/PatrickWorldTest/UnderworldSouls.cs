@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnderworldSouls : MonoBehaviour
 {
     private ParticleSystem _underworldSoulFlow;
-    [SerializeField] private EarthManager _underworldManager = null;
+    [SerializeField] private UnderworldManager _underworldManager = null;
 
     // Start is called before the first frame update
     void Start()

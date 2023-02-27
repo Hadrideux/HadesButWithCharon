@@ -17,7 +17,6 @@ public class SoulBehavior : MonoBehaviour
 
     void Update()
     {
-        ParticleSystem.EmissionModule soulFlowEmission = _soulFlow.emission;
-        soulFlowEmission.rateOverTime = _earthManager.HumanProductionRate;
+
     }
 }
