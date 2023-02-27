@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EarthManager : MonoBehaviour
 {
-    [SerializeField] private int _humanProdutionRate = 100;
+    [SerializeField] private float _humanProdutionRate = 100;
 
-    public int HumanProductionRate
+    public float HumanProductionRate
     {
         get => _humanProdutionRate;
     }

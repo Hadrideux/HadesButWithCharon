@@ -531,7 +531,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84fb4142fe31fa4db1985449e1a680b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doorThresholds: 0000000019000000320000004b00000064000000
+  _doorThresholds:
+  - 0
+  - 25
+  - 50
+  - 75
+  - 100
+  _thresholds: 0
   _leftDoorObject: {fileID: 982713352}
   _rightDoorObject: {fileID: 378910456}
 --- !u!1 &893436584
@@ -7822,7 +7828,7 @@ ParticleSystem:
     orbitalX:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.75
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -7875,7 +7881,7 @@ ParticleSystem:
     orbitalY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.3
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8087,7 +8093,7 @@ ParticleSystem:
     orbitalOffsetZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -8140,7 +8146,7 @@ ParticleSystem:
     radial:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.15
+      scalar: 0.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10921,7 +10927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258284462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.11, z: 0}
+  m_LocalPosition: {x: -1.69, y: 3.67, z: -5.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10942,6 +10948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _earthManager: {fileID: 184186144}
   _earthSouls: {fileID: 944992607}
+  _doorController: {fileID: 864325746}
 --- !u!1 &1279492179
 GameObject:
   m_ObjectHideFlags: 0
@@ -16090,6 +16097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _underworldManager: {fileID: 2132940967}
+  _doorSouls: {fileID: 1258284466}
 --- !u!1 &1694564767
 GameObject:
   m_ObjectHideFlags: 0
@@ -16187,6 +16195,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a56e7e14ca7e4942b2e31c77e203b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _earthSouls: {fileID: 944992608}
+  _doorSouls: {fileID: 1258284466}
+  _underworldSouls: {fileID: 1687514844}
   _earthRateText: {fileID: 150597215}
   _styxRateText: {fileID: 993008118}
   _underworldRateText: {fileID: 1223892060}
