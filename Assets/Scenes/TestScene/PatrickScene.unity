@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 336e7891f35c2e545b38d16dce4f2be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _humanProdutionRate: 5
+  _humanProdutionRate: 10
 --- !u!4 &184186145
 Transform:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5370,7 +5370,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 944992604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30dca6c51775ffe43a73b6b213d30964, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b4111a94835dc44cbf7d77aea10f2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _earthManager: {fileID: 184186144}
@@ -5847,6 +5847,7 @@ GameObject:
   - component: {fileID: 1258284465}
   - component: {fileID: 1258284464}
   - component: {fileID: 1258284463}
+  - component: {fileID: 1258284466}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -10648,6 +10649,20 @@ Transform:
   m_Father: {fileID: 617109283}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1258284466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258284462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e044433ee7d413948b11d4ce33235295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _earthManager: {fileID: 184186144}
+  _earthSouls: {fileID: 944992607}
 --- !u!1 &1279492179
 GameObject:
   m_ObjectHideFlags: 0
@@ -11078,6 +11093,7 @@ GameObject:
   - component: {fileID: 1687514841}
   - component: {fileID: 1687514843}
   - component: {fileID: 1687514842}
+  - component: {fileID: 1687514844}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -15879,6 +15895,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1687514844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687514840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143bab1d8dab81244b91b1904658c3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _underworldManager: {fileID: 2132940967}
 --- !u!1 &1694564767
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class EarthSouls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ParticleSystem.EmissionModule soulFlowEmission = _earthSoulFlow.emission;
+        soulFlowEmission.rateOverTime = _earthManager.HumanProductionRate;
     }
 }
