@@ -10,6 +10,8 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private GameObject _title = null;
     [SerializeField] private GameObject _mainMenu = null;
     [SerializeField] private GameObject _settingsMenu = null;
+    [SerializeField] private GameObject _video = null;
+    [SerializeField] private GameObject _sound = null;
 
     [SerializeField] private Toggle _fullScreenToggle = null;
 
@@ -19,7 +21,8 @@ public class SettingsMenu : MonoBehaviour
 
     void Start()
     {
-
+        _video.SetActive(true);
+        _sound.SetActive(false);
     }
 
     void Update()
@@ -32,6 +35,17 @@ public class SettingsMenu : MonoBehaviour
         _title.SetActive(true);
         _mainMenu.SetActive(true);
         _settingsMenu.SetActive(false);
+    }
+
+    public void OpenVideo()
+    {
+        _video.SetActive(true);
+        _sound.SetActive(false);
+    }
+    public void OpenSound()
+    {
+        _video.SetActive(false);
+        _sound.SetActive(true);
     }
 
     public void SetFullscreen(bool isFullscreen)
