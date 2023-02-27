@@ -16,11 +16,6 @@ public class MainMenu : MonoBehaviour
         _settingsMenu.SetActive(false);
     }
 
-    void Update()
-    {
-        Debug.Log(Screen.brightness);
-    }
-
     public void Play()
     {
         SceneManager.LoadScene("VirgileScene");
