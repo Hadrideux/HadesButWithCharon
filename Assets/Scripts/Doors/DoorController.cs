@@ -8,6 +8,7 @@ public class DoorController : MonoBehaviour
     private int _thresholds = 0;
     private int _index = 0;
     private bool _isSelected = false;
+    [SerializeField] private GameObject _doorObject = null;
 
     #region Properties
 
@@ -47,12 +48,22 @@ public class DoorController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase Angle Door
             {
                 Index++;
+                DoorAngle();
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow)) //Decrease Angle Door
             {
                 Index--;
+                DoorAngle();
             }
         }
     }
+
+    private void DoorAngle()
+    {
+        float newAngle = _doorThresholds[Index] * 90 / 100;
+        Vector3 rotation = new Vector3(0, 0, newAngle);
+        _doorObject.transform.rotation = Quaternion.Euler(rotation);
+    }
+
 }
