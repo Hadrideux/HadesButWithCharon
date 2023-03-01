@@ -33,9 +33,7 @@ public class DoorSouls : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             UpdateDoorSouls();
-        }    
-
-
+        }
     }
 
     private void UpdateDoorSouls()
@@ -46,5 +44,4 @@ public class DoorSouls : MonoBehaviour
         _outputSouls = _earthManager.HumanProductionRate - _stuckSouls;
 
     }
-
 }
