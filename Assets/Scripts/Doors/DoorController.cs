@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    [SerializeField] private int[] _doorThresholds = null;
-    private int _thresholds = 0;
+    [SerializeField] private float[] _doorThresholds = null;
+    [SerializeField] private float _thresholds = 0;
     private int _index = 0;
     private bool _isSelected = false;
-    [SerializeField] private GameObject _doorObject = null;
+    [SerializeField] private GameObject _leftDoorObject = null;
+    [SerializeField] private GameObject _rightDoorObject = null;
 
     #region Properties
 
-    public int CurrentFlow => _doorThresholds[_index];
+    public float CurrentFlow => _doorThresholds[_index];
 
-    public int CurrentTresholds
+    public float CurrentTresholds
     {
         get => _thresholds;
         set => _thresholds = Mathf.Clamp(value, 0, _doorThresholds.Length);
@@ -61,9 +62,11 @@ public class DoorController : MonoBehaviour
 
     private void DoorAngle()
     {
+        _thresholds = _doorThresholds[Index];
         float newAngle = _doorThresholds[Index] * 90 / 100;
         Vector3 rotation = new Vector3(0, 0, newAngle);
-        _doorObject.transform.rotation = Quaternion.Euler(rotation);
+        _leftDoorObject.transform.rotation = Quaternion.Euler(rotation);
+        _rightDoorObject.transform.rotation = Quaternion.Euler(- rotation);
     }
 
 }

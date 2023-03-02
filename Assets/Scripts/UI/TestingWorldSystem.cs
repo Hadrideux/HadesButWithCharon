@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class TestingWorldSystem : MonoBehaviour
 {
+    [SerializeField] private EarthSouls _earthSouls = null;
+    [SerializeField] private DoorSouls _doorSouls = null;
+    [SerializeField] private UnderworldSouls _underworldSouls = null;
+
     [SerializeField] private TMP_Text _earthRateText = null;
     private float _earthRate = 5f;
     [SerializeField] private TMP_Text _styxRateText = null;
@@ -26,9 +30,9 @@ public class TestingWorldSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _earthRateText.text = _earthRate.ToString();
-        _styxRateText.text = _styxRate.ToString();
-        _underworldRateText.text = _underworldRate.ToString();
+        _earthRateText.text = (_earthSouls.EarthSoulsRate).ToString();
+        _styxRateText.text =  (_doorSouls.StuckSouls).ToString();
+        _underworldRateText.text = (_underworldSouls.UnderworldSoulsRate).ToString();
 
 
         _timer += Time.deltaTime;

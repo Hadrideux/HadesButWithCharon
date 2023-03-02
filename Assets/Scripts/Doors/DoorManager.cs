@@ -16,6 +16,11 @@ public class DoorManager : MonoBehaviour
 
     public float TotalFlow => _totalFlow;
 
+    private void Start()
+    {
+        _doors[DoorsIndex] = _doors[0];
+    }
+
     // Update is called once per frame
     void Update()
     {        
