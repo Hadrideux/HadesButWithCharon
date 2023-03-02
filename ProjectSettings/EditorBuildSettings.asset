@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 5deaf22a6a35eb746b6e4c8ad0ed4f7e
   - enabled: 1
-    path: Assets/Scenes/TestScene/VirgileScene.unity
-    guid: 13c332adf9558644c92df16f766d674c
+    path: Assets/Scenes/TestScene/Demo_LowPolyEarth.unity
+    guid: e0ecf4acd7a83df42b8568bb8101015c
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 2e7d26866d2abf341879b270e98501ad

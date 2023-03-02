@@ -4,25 +4,32 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering.PostProcessing;
 
 public class SettingsMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject _title = null;
+    #region Attributs
     [SerializeField] private GameObject _mainMenu = null;
     [SerializeField] private GameObject _settingsMenu = null;
-    [SerializeField] private GameObject _video = null;
-    [SerializeField] private GameObject _sound = null;
 
     [SerializeField] private Toggle _fullScreenToggle = null;
+    [SerializeField] private Slider _brightnessSlider = null;
+    [SerializeField] private PostProcessProfile _brightness = null;
+    [SerializeField] private PostProcessLayer _layer = null;
+    private float _normalBrightness = 1;
+    private AutoExposure _exposure;
 
     [SerializeField] private List<ResolutionIndex> _resolutions = new List<ResolutionIndex>();
     [SerializeField] private TMP_Text _resolutionsText = null;
     private int _selectedResolutions = 0;
+    #endregion Attributs
 
     void Start()
     {
-        _video.SetActive(true);
-        _sound.SetActive(false);
+        _brightness.TryGetSettings(out _exposure);
+        _brightnessSlider.value = _normalBrightness;
+        SetBrightness(_brightnessSlider.value);
+
     }
 
     void Update()
@@ -32,20 +39,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void Back()
     {
-        _title.SetActive(true);
         _mainMenu.SetActive(true);
         _settingsMenu.SetActive(false);
-    }
-
-    public void OpenVideo()
-    {
-        _video.SetActive(true);
-        _sound.SetActive(false);
-    }
-    public void OpenSound()
-    {
-        _video.SetActive(false);
-        _sound.SetActive(true);
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -88,6 +83,18 @@ public class SettingsMenu : MonoBehaviour
     public void SetResolution()
     {
         Screen.SetResolution(_resolutions[_selectedResolutions].horizontal, _resolutions[_selectedResolutions].vertical, _fullScreenToggle.isOn);
+    }
+
+    public void SetBrightness(float value)
+    {
+        if(value != 0)
+        {
+            _exposure.keyValue.value = value;
+        }
+        else
+        {
+            _exposure.keyValue.value = _normalBrightness;
+        }
     }
 }
 
