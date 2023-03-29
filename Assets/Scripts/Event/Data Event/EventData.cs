@@ -5,11 +5,13 @@ public class ItemData : ScriptableObject
 {
 
     [SerializeField] private EEventLocation _eventLocation = EEventLocation.EARTH;
+    [SerializeField] private string _effect = "Apocalypse";
     [SerializeField] private float _delay = 0f;
-    [SerializeField] private float _effect = 0f;
+    [SerializeField] private float _productionSoul = 0f;
 
     public EEventLocation EventLocation => _eventLocation;
+    public string Effect => _effect;
     public float Delay => _delay;
-    public float Effect => _effect;
+    public float ProductionSoul => _productionSoul;
 
 }
