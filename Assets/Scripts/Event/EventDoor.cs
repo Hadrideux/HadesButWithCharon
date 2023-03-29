@@ -15,4 +15,20 @@ public class EventDoor : MonoBehaviour
     {
         
     }
+
+    // Bloque les controles de la porte pendant 1 cycle
+    public void DoorBreakEvent()
+    {
+
+
+    }
+
+    // soustraint une partie du cache du styx et les envoi vers le tartare
+    public void LeakEvent()
+    {
+
+
+    }
+
+
 }
