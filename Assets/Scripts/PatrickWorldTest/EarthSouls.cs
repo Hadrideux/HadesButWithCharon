@@ -6,6 +6,7 @@ public class EarthSouls : MonoBehaviour
 {
     private ParticleSystem _earthSoulFlow;
     [SerializeField] private EarthManager _earthManager = null;
+    [SerializeField] private EventController _eventController = null;
     private float _earthSoulsRate = 5f;
     public float EarthSoulsRate
     {
@@ -22,7 +23,7 @@ public class EarthSouls : MonoBehaviour
     void Update()
     {
         ParticleSystem.EmissionModule soulFlowEmission = _earthSoulFlow.emission;
-        soulFlowEmission.rateOverTime = _earthManager.HumanProductionRate;
+        soulFlowEmission.rateOverTime = _eventController.EarthRate;
         _earthSoulsRate = soulFlowEmission.rateOverTime.constant;
     }
 }

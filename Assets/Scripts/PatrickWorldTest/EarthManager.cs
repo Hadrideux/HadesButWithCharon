@@ -23,18 +23,10 @@ public class EarthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timer += Time.deltaTime;
-        if (_timer > _delay)
-        {
-            NewCycle();
-            _timer = 0f;
-        }
+
     }
 
-    private void NewCycle()
-    {
-        _humanProdutionRate = Random.Range(10f, 15.1f);
-    }
+    
 
 }
 

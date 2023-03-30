@@ -6,6 +6,7 @@ public class DoorSouls : MonoBehaviour
 {
     private ParticleSystem _doorSoulFlow;
     [SerializeField] private EarthManager _earthManager = null;
+    [SerializeField] private EventController _eventController = null;
     [SerializeField] private ParticleSystem _earthSouls = null;
     [SerializeField] private DoorController _doorController = null;
     private float _stuckSouls = 0f;
@@ -38,10 +39,10 @@ public class DoorSouls : MonoBehaviour
 
     private void UpdateDoorSouls()
     {
-        _stuckSouls = _earthManager.HumanProductionRate - (_earthManager.HumanProductionRate * _doorController.CurrentTresholds / 100);
+        _stuckSouls = _eventController.EarthRate - (_eventController.EarthRate * _doorController.CurrentTresholds / 100);
         ParticleSystem.EmissionModule doorEmission = _doorSoulFlow.emission;
         doorEmission.rateOverTime = _stuckSouls;
-        _outputSouls = _earthManager.HumanProductionRate - _stuckSouls;
+        _outputSouls = _eventController.EarthRate - _stuckSouls;
 
     }
 }

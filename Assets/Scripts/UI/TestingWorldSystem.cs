@@ -8,7 +8,7 @@ public class TestingWorldSystem : MonoBehaviour
     [SerializeField] private EarthSouls _earthSouls = null;
     [SerializeField] private DoorSouls _doorSouls = null;
     [SerializeField] private UnderworldSouls _underworldSouls = null;
-
+    [SerializeField] private EventController _eventController = null;
     [SerializeField] private TMP_Text _earthRateText = null;
     private float _earthRate = 5f;
     [SerializeField] private TMP_Text _styxRateText = null;
@@ -17,6 +17,9 @@ public class TestingWorldSystem : MonoBehaviour
     private float _underworldRate = 5f;
     [SerializeField] private float _doorOpening = 0.5f;
     private float _doorCumule = 2f;
+    [SerializeField] private TMP_Text _cycleText = null;
+    private int _cycleCount = 0;
+
 
     private float _delay = 3;
     private float _timer;
@@ -30,9 +33,11 @@ public class TestingWorldSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _earthRateText.text = (_earthSouls.EarthSoulsRate).ToString();
-        _styxRateText.text =  (_doorSouls.StuckSouls).ToString();
-        _underworldRateText.text = (_underworldSouls.UnderworldSoulsRate).ToString();
+        _earthRateText.text = _eventController.EarthRate.ToString();
+        _styxRateText.text = _eventController.StyxRate.ToString();
+        _underworldRateText.text = _eventController.UnderworldRate.ToString();
+        _cycleText.text = _eventController.CycleCount.ToString();
+
 
 
         _timer += Time.deltaTime;

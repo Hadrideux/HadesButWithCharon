@@ -4,4 +4,14 @@ public enum EEventLocation
     DOOR,
     EARTH,
 
+
+}
+public enum EEventName
+{
+    MutinyEvent,
+    PandemyEvent,
+    WarEvent,
+    BabyBoomEvent,
+    DoorBreakEvent,
+    LeakEvent,
 }
