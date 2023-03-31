@@ -7,6 +7,7 @@ public class UnderworldSouls : MonoBehaviour
     private ParticleSystem _underworldSoulFlow;
     [SerializeField] private UnderworldManager _underworldManager = null;
     [SerializeField] private DoorSouls _doorSouls = null;
+    [SerializeField] private EventController _eventController = null;
     private float _underworldSoulsRate;
     public float UnderworldSoulsRate
     {
@@ -25,5 +26,6 @@ public class UnderworldSouls : MonoBehaviour
         ParticleSystem.EmissionModule underworldEmission = _underworldSoulFlow.emission;
         underworldEmission.rateOverTime = _doorSouls.OutputSouls;
         _underworldSoulsRate = underworldEmission.rateOverTime.constant;
+        _eventController.UnderworldRate = _underworldSoulsRate;
     }
 }

@@ -31,10 +31,9 @@ public class DoorSouls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            UpdateDoorSouls();
-        }
+        UpdateDoorSouls();
+
+
     }
 
     private void UpdateDoorSouls()
@@ -43,6 +42,6 @@ public class DoorSouls : MonoBehaviour
         ParticleSystem.EmissionModule doorEmission = _doorSoulFlow.emission;
         doorEmission.rateOverTime = _stuckSouls;
         _outputSouls = _eventController.EarthRate - _stuckSouls;
-
+        _eventController.StyxRate = _stuckSouls;
     }
 }

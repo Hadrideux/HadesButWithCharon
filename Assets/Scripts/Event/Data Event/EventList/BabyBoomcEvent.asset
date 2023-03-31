@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: DemographicEvent
+  m_Name: BabyBoomcEvent
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  _eventLocation: 2
+  _eventName: 3
   _effect: BurstSouls
   _delay: 0
   _productionSoul: 0
+  _callRate: 5

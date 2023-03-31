@@ -5,6 +5,9 @@ using UnityEngine;
 public class EventController : MonoBehaviour
 {
     [SerializeField] private EEventName _eventToCall = EEventName.BabyBoomEvent;
+    [SerializeField] private EarthSouls _earthSouls = null;
+    [SerializeField] private DoorSouls _doorSouls = null;
+    [SerializeField] private UnderworldSouls _underworldSouls = null;
 
     private float _earthRate = 5f;
     private float _styxRate = 2f;
@@ -12,7 +15,6 @@ public class EventController : MonoBehaviour
     private int _cycleCount = 0;
     private float _timer = 0f;
     private float _delay = 10f;
-    private float _humanProdutionRate = 10f;
 
     #region Properties
     public float EarthRate
@@ -21,7 +23,10 @@ public class EventController : MonoBehaviour
         {
             return _earthRate;
         }
-
+        set
+        {
+            _earthRate = value;
+        }
     }
 
     public float StyxRate
@@ -31,6 +36,10 @@ public class EventController : MonoBehaviour
             return _styxRate;
         }
 
+        set
+        {
+            _styxRate = value;
+        }
     }
 
     public float UnderworldRate
@@ -39,10 +48,13 @@ public class EventController : MonoBehaviour
         {
             return _underworldRate;
         }
-
+        set
+        {
+            _underworldRate = value;
+        }
     }
 
-    public float CycleCount
+    public int CycleCount
     {
         get
         {
@@ -74,7 +86,7 @@ public class EventController : MonoBehaviour
 
     private void NewCycle()
     {
-        _humanProdutionRate = Random.Range(10f, 15.1f);
+        _earthRate = Random.Range(10f, 15.1f);
         _cycleCount++; 
     }
 

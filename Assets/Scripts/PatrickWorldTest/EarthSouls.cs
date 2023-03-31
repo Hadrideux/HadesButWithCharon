@@ -25,5 +25,6 @@ public class EarthSouls : MonoBehaviour
         ParticleSystem.EmissionModule soulFlowEmission = _earthSoulFlow.emission;
         soulFlowEmission.rateOverTime = _eventController.EarthRate;
         _earthSoulsRate = soulFlowEmission.rateOverTime.constant;
+        _eventController.EarthRate = _earthSoulsRate;
     }
 }
