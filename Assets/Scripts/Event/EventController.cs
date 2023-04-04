@@ -10,8 +10,11 @@ public class EventController : MonoBehaviour
     [SerializeField] private UnderworldSouls _underworldSouls = null;
 
     private float _earthRate = 5f;
+    [SerializeField]  private float _earthMaxCapacity = 20f;
     private float _styxRate = 2f;
+    [SerializeField] private float _styxMaxCapacity = 15f;
     private float _underworldRate = 5f;
+    [SerializeField] private float _underworldMaxCapacity = 10f;
     private int _cycleCount = 0;
     private float _timer = 0f;
     private float _delay = 10f;
@@ -29,6 +32,18 @@ public class EventController : MonoBehaviour
         }
     }
 
+    public float EarthMaxCapacity
+    {
+        get
+        {
+            return _earthMaxCapacity;
+        }
+        set
+        {
+            _earthMaxCapacity = value;
+        }
+    }
+
     public float StyxRate
     {
         get
@@ -39,6 +54,18 @@ public class EventController : MonoBehaviour
         set
         {
             _styxRate = value;
+        }
+    }
+    public float StyxMaxCapacity
+    {
+        get
+        {
+            return _styxMaxCapacity;
+        }
+
+        set
+        {
+            _styxMaxCapacity = value;
         }
     }
 
@@ -53,7 +80,17 @@ public class EventController : MonoBehaviour
             _underworldRate = value;
         }
     }
-
+    public float UnderworldMaxCapacity
+    {
+        get
+        {
+            return _underworldMaxCapacity;
+        }
+        set
+        {
+            _underworldMaxCapacity = value;
+        }
+    }
     public int CycleCount
     {
         get
