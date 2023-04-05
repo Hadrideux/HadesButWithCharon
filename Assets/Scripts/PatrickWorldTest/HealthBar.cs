@@ -6,7 +6,7 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     #region Fields
-    [SerializeField] private HPController _controller = null;
+    [SerializeField] private EventController _eventController = null;
     private Vector3 _beginPos = Vector3.zero;
     private Vector3 _endPos = Vector3.zero;
     [SerializeField] private RectTransform _fill = null;
@@ -16,7 +16,7 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _controller.OnHpChange += UpdateBar;
+        
     }
 
     // Update is called once per frame

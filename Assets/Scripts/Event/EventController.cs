@@ -111,12 +111,7 @@ public class EventController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timer += Time.deltaTime;
-        if (_timer > _delay)
-        {
-            NewCycle();
-            _timer = 0f;
-        }
+        
 
         
     }

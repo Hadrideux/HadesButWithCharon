@@ -43,5 +43,7 @@ public class DoorSouls : MonoBehaviour
         doorEmission.rateOverTime = _stuckSouls;
         _outputSouls = _eventController.EarthRate - _stuckSouls;
         _eventController.StyxRate = _stuckSouls;
+
+
     }
 }
