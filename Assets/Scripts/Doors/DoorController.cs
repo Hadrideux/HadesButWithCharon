@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    [SerializeField] private EventController _eventController = null;
+
+
     [SerializeField] private float[] _doorThresholds = null;
     [SerializeField] private float _thresholds = 0;
     private int _index = 0;
@@ -20,7 +23,6 @@ public class DoorController : MonoBehaviour
         get => _thresholds;
         set => _thresholds = Mathf.Clamp(value, 0, _doorThresholds.Length);
     }
-
 
     public bool IsSelected
     {
@@ -44,7 +46,7 @@ public class DoorController : MonoBehaviour
 
     private void OpenDoor()
     {
-        if (_isSelected)
+        if (_isSelected && _eventController.DoorEvent.IsBreak != true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase Angle Door
             {
