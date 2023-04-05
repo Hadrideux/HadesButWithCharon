@@ -129,8 +129,6 @@ public class EventController : MonoBehaviour
             NewCycle();
             _timer = 0f;
         }
-
-        
     }
 
     private void NewCycle()

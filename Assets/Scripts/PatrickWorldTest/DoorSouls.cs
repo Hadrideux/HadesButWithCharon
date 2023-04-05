@@ -34,8 +34,6 @@ public class DoorSouls : MonoBehaviour
     void Update()
     {
         UpdateDoorSouls();
-
-
     }
 
     private void UpdateDoorSouls()

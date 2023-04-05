@@ -5,8 +5,7 @@ using UnityEngine;
 public class EventDoor : MonoBehaviour
 {
 
-    [SerializeField] private EventController _eventController = null;
-    [SerializeField] private DoorSouls _doorSouls = null;
+    //[SerializeField] private EventController _eventController = null;
 
     [SerializeField] private int _breakCycleDuration = 0;
     [SerializeField] private bool _isBreak = false;
@@ -43,8 +42,7 @@ public class EventDoor : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {      
     }
 
     // Bloque les controles de la porte pendant 1 cycle
