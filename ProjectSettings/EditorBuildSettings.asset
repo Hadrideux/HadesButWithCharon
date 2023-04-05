@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 5deaf22a6a35eb746b6e4c8ad0ed4f7e
   - enabled: 1
-    path: Assets/Scenes/TestScene/Demo_LowPolyEarth.unity
+    path: Assets/Scenes/Game.unity
     guid: e0ecf4acd7a83df42b8568bb8101015c
   - enabled: 1
     path: Assets/Scenes/GameScene.unity

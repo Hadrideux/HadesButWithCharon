@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _mainMenu = null;
     [SerializeField] private GameObject _settingsMenu = null;
+    [SerializeField] private Animator _blackFadeIn = null;
     void Start()
     {
         _mainMenu.SetActive(true);
@@ -20,6 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
+        _blackFadeIn.Play("FadeIn");
         Application.Quit();
     }
 

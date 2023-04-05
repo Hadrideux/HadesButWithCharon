@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    [SerializeField] private EventController _eventController = null;
+
     [SerializeField] private float[] _doorThresholds = null;
     [SerializeField] private float _thresholds = 0;
     private int _index = 0;
-    private bool _isSelected = false;
+
     [SerializeField] private GameObject _leftDoorObject = null;
     [SerializeField] private GameObject _rightDoorObject = null;
 
@@ -19,13 +21,6 @@ public class DoorController : MonoBehaviour
     {
         get => _thresholds;
         set => _thresholds = Mathf.Clamp(value, 0, _doorThresholds.Length);
-    }
-
-
-    public bool IsSelected
-    {
-        get => _isSelected;
-        set => _isSelected = value;
     }
 
     private int Index
@@ -44,7 +39,7 @@ public class DoorController : MonoBehaviour
 
     private void OpenDoor()
     {
-        if (_isSelected)
+        if (_eventController.DoorEvent.IsBreak != true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase Angle Door
             {
@@ -65,6 +60,7 @@ public class DoorController : MonoBehaviour
         _thresholds = _doorThresholds[Index];
         float newAngle = _doorThresholds[Index] * 90 / 100;
         Vector3 rotation = new Vector3(0, 0, newAngle);
+
         _leftDoorObject.transform.rotation = Quaternion.Euler(rotation);
         _rightDoorObject.transform.rotation = Quaternion.Euler(- rotation);
     }
