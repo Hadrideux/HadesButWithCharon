@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
+    [SerializeField] private EventDoor _doorEvent = null;
+
+
     [SerializeField] private EEventName _eventToCall = EEventName.BabyBoomEvent;
     [SerializeField] private EarthSouls _earthSouls = null;
     [SerializeField] private DoorSouls _doorSouls = null;
@@ -20,6 +23,12 @@ public class EventController : MonoBehaviour
     private float _delay = 10f;
 
     #region Properties
+    public EventDoor DoorEvent
+    {
+        get => _doorEvent;
+        set => _doorEvent = value;
+    }
+
     public float EarthRate
     {
         get
@@ -56,6 +65,7 @@ public class EventController : MonoBehaviour
             _styxRate = value;
         }
     }
+
     public float StyxMaxCapacity
     {
         get
@@ -80,6 +90,7 @@ public class EventController : MonoBehaviour
             _underworldRate = value;
         }
     }
+
     public float UnderworldMaxCapacity
     {
         get
@@ -91,6 +102,7 @@ public class EventController : MonoBehaviour
             _underworldMaxCapacity = value;
         }
     }
+
     public int CycleCount
     {
         get
