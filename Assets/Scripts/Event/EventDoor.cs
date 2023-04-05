@@ -6,6 +6,7 @@ public class EventDoor : MonoBehaviour
 {
 
     [SerializeField] private EventController _eventController = null;
+    [SerializeField] private DoorSouls _doorSouls = null;
 
     [SerializeField] private int _breakCycleDuration = 0;
     [SerializeField] private bool _isBreak = false;
@@ -13,12 +14,27 @@ public class EventDoor : MonoBehaviour
     [SerializeField] private int _leakCycleDuration = 0;
     [SerializeField] private bool _isLeak = false;
     
+    private float _leakValue = 0;
+    [SerializeField] private float _leakMinValue = 0;
+    [SerializeField] private float _leakMaxValue = 5;
+
     public bool IsBreak
     {
         get => _isBreak;
         set => _isBreak = value;
     }
 
+    public bool IsLeak
+    {
+        get => _isLeak; 
+        set => _isLeak = value;
+    }
+
+    public float LeakValue
+    {
+        get => _leakValue; 
+        set => _leakValue = value;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -49,11 +65,13 @@ public class EventDoor : MonoBehaviour
     {
         if (_leakCycleDuration == 1)
         {
-
+            IsLeak = true;
+            LeakValue = Random.Range(_leakMinValue, _leakMaxValue);
         }
         else if (_leakCycleDuration != 1)
         { 
-
+            IsLeak = false;
+            LeakValue = 0;
         }
     }
 

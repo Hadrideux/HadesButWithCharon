@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorSouls : MonoBehaviour
 {
+    [SerializeField] private EventDoor _doorEvent = null;
+
     private ParticleSystem _doorSoulFlow;
     [SerializeField] private EarthManager _earthManager = null;
     [SerializeField] private EventController _eventController = null;
@@ -43,5 +45,11 @@ public class DoorSouls : MonoBehaviour
         doorEmission.rateOverTime = _stuckSouls;
         _outputSouls = _eventController.EarthRate - _stuckSouls;
         _eventController.StyxRate = _stuckSouls;
+
+        if (_doorEvent.IsLeak == true)
+        {
+            _stuckSouls -= _doorEvent.LeakValue;
+            _outputSouls += _doorEvent.LeakValue;
+        }
     }
 }

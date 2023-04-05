@@ -46,7 +46,7 @@ public class DoorController : MonoBehaviour
 
     private void OpenDoor()
     {
-        if (_isSelected && _eventController.DoorEvent.IsBreak == true)
+        if (_isSelected && _eventController.DoorEvent.IsBreak != true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase Angle Door
             {
