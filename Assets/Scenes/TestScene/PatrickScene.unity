@@ -823,9 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7250d9977ef36d4fbd77e564d9dc6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doors:
-  - {fileID: 864325746}
-  _doorIndex: 0
+  _doors: {fileID: 864325746}
   _totalFlow: 0
 --- !u!1 &636936904
 GameObject:
@@ -889,6 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84fb4142fe31fa4db1985449e1a680b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventController: {fileID: 0}
   _doorThresholds:
   - 0
   - 25
@@ -16374,6 +16373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e044433ee7d413948b11d4ce33235295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _doorEvent: {fileID: 0}
   _earthManager: {fileID: 184186144}
   _eventController: {fileID: 1336573006}
   _earthSouls: {fileID: 944992607}

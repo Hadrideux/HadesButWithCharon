@@ -19,7 +19,19 @@ public class EventController : MonoBehaviour
     private float _timer = 0f;
     private float _delay = 10f;
 
+    private bool _doorEvent;
+
     #region Properties
+
+    public bool IsDoor
+    {
+        get
+        {
+            return _doorEvent;
+        }
+    }
+
+
     public float EarthRate
     {
         get
