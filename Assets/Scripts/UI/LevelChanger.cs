@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour
 {
+    [SerializeField] private GameObject _mainMenu = null;
     public Animator _animator = null;
     private int _levelToLoad;
     void Start()
     {
-
+        _mainMenu.SetActive(true);
     }
 
     void Update()

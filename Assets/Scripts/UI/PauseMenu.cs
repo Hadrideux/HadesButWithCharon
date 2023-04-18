@@ -24,6 +24,8 @@ public class PauseMenu : MonoBehaviour
     {
         _pauseMenu.SetActive(false);
         _settingsMenu.SetActive(false);
+        _quitMainMenu.SetActive(false);
+        _quitDesktop.SetActive(false);
     }
 
     public void Resume()
