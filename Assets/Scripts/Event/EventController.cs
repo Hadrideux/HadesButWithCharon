@@ -12,7 +12,7 @@ public class EventController : MonoBehaviour
     private float _earthRate = 5f;
     [SerializeField]  private float _earthMaxCapacity = 20f;
     private float _styxRate = 2f;
-    private float _styxRateCache = 2f;
+    private float _styxRateCache = 0f;
     [SerializeField] private float _styxMaxCapacity = 15f;
     private float _underworldRate = 5f;
     [SerializeField] private float _underworldMaxCapacity = 10f;

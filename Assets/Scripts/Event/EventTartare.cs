@@ -7,13 +7,13 @@ public class EventTartare : MonoBehaviour
 
     [SerializeField] private EventController _eventController = null;
 
+    [SerializeField] private float _mutinyCache = 0f;
     [SerializeField] private int _mutinyCycle = 0;
-    [SerializeField] private bool _isStopProduct = false;
 
-    public bool IsStopProduct
+    public float MutinyCache
     {
-        get => _isStopProduct;
-        set => _isStopProduct = value;
+        get => _mutinyCache;
+        set => _mutinyCache = Mathf.Clamp(value,0 , 20);
     }
     // Start is called before the first frame update
     void Start()
@@ -30,15 +30,6 @@ public class EventTartare : MonoBehaviour
     // Empeche le cache d'humain du tartare de se vider pendant 1 cycle
     public void MutinyEvent()
     {
-        if (_mutinyCycle == 1)
-        {
-            IsStopProduct = true;
-        }
-        else if (_mutinyCycle != 1)
-        {
-            IsStopProduct = false;
-        }
-    }
-
-    
+        _mutinyCache = 20;           
+    }    
 }

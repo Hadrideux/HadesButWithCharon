@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class UnderworldSouls : MonoBehaviour
 {
+    [SerializeField] private EventTartare _eventTartare = null;
     private ParticleSystem _underworldSoulFlow;
     [SerializeField] private UnderworldManager _underworldManager = null;
     [SerializeField] private DoorSouls _doorSouls = null;
@@ -13,7 +15,7 @@ public class UnderworldSouls : MonoBehaviour
     {
         get => _underworldSoulsRate;
     }
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,7 @@ public class UnderworldSouls : MonoBehaviour
     void Update()
     {
         ParticleSystem.EmissionModule underworldEmission = _underworldSoulFlow.emission;
-        underworldEmission.rateOverTime = _doorSouls.OutputSouls;
+        underworldEmission.rateOverTime = _eventTartare.MutinyCache + _doorSouls.OutputSouls;
         _underworldSoulsRate = underworldEmission.rateOverTime.constant;
         _eventController.UnderworldRate = _underworldSoulsRate;
     }
