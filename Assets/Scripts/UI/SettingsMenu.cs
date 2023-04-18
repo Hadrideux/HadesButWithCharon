@@ -24,6 +24,10 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private List<ResolutionIndex> _resolutions = new List<ResolutionIndex>();
     [SerializeField] private TMP_Text _resolutionsText = null;
     private int _selectedResolutions = 0;
+
+    [SerializeField] private AudioSource _source = null;
+    [SerializeField] private AudioClip _click = null;
+    [SerializeField] private AudioClip _hold = null;
     #endregion Attributs
 
     void Start()
@@ -41,12 +45,14 @@ public class SettingsMenu : MonoBehaviour
 
     public void BackMainMenu()
     {
+        _source.PlayOneShot(_click);
         _mainMenu.SetActive(true);
         _settingsMenu.SetActive(false);
     }
 
     public void BackPauseMenu()
     {
+        _source.PlayOneShot(_click);
         _pauseMenu.SetActive(true);
         _pauseSettingsMenu.SetActive(false);
     }
@@ -54,16 +60,19 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetFullscreen(bool isFullscreen)
     {
+        _source.PlayOneShot(_click);
         Screen.fullScreen = isFullscreen;
     }
 
     public void SetQuality(int qualityIndex)
     {
+        _source.PlayOneShot(_click);
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
     public void ResolutionsInf()
     {
+        _source.PlayOneShot(_click);
         _selectedResolutions--;
         if (_selectedResolutions < 0)
         {
@@ -75,6 +84,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void ResolutionSup()
     {
+        _source.PlayOneShot(_click);
         _selectedResolutions++;
         if (_selectedResolutions > _resolutions.Count - 1)
         {
@@ -96,7 +106,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetBrightness(float value)
     {
-        if(value != 0)
+        _source.PlayOneShot(_hold);
+        if (value != 0)
         {
             _exposure.keyValue.value = value;
         }
