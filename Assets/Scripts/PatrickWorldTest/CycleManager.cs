@@ -69,9 +69,10 @@ public class CycleManager : MonoBehaviour
     {
         SetCacheAttribut();
         CheckAndCallEvent();
-        _eventController.EarthRate = Random.Range(10f, 15.1f);
-        _eventController.StyxRateCache = 
+
+        _eventController.EarthRate = Random.Range(10f, 15.1f);        
         _cycleCount++;
+
 
     }
 
@@ -120,8 +121,10 @@ public class CycleManager : MonoBehaviour
 
     private void SetCacheAttribut()
     {
+        _eventTartare.MutinyCache -= 5;
         _earthCache = _eventController.EarthRate;
         _styxCache = _eventController.StyxRate;
         _underworldCache = _eventController.UnderworldRate;
+        _eventController.StyxRateCache = _doorSouls.StuckSouls;
     }
 }
