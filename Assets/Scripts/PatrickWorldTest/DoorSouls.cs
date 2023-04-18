@@ -38,7 +38,8 @@ public class DoorSouls : MonoBehaviour
 
     private void UpdateDoorSouls()
     {
-        _stuckSouls = _eventController.EarthRate - (_eventController.EarthRate * _doorController.CurrentTresholds / 100);
+        _stuckSouls = _eventController.StyxRateCache + _eventController.EarthRate - (_eventController.EarthRate * _doorController.CurrentTresholds / 100);
+        
         ParticleSystem.EmissionModule doorEmission = _doorSoulFlow.emission;
         doorEmission.rateOverTime = _stuckSouls;
         _outputSouls = _eventController.EarthRate - _stuckSouls;

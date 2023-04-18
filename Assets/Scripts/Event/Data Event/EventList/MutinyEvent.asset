@@ -16,4 +16,4 @@ MonoBehaviour:
   _effect: Apocalypse
   _delay: 0
   _productionSoul: 0
-  _callRate: 10
+  _callRate: 0

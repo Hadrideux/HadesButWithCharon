@@ -5,6 +5,10 @@ using UnityEngine;
 public class CycleManager : MonoBehaviour
 {
     [SerializeField] private EventController _eventController = null;
+    [SerializeField] private DoorSouls _doorSouls = null;
+    [SerializeField] private EventEarth _eventEarth = null;
+    [SerializeField] private EventDoor _eventDoor = null;
+    [SerializeField] private EventTartare _eventTartare = null;
 
     #region Event Check
     private bool _eventMutiny = false;
@@ -66,27 +70,29 @@ public class CycleManager : MonoBehaviour
         SetCacheAttribut();
         CheckAndCallEvent();
         _eventController.EarthRate = Random.Range(10f, 15.1f);
+        _eventController.StyxRateCache = 
         _cycleCount++;
 
     }
 
     private void CheckAndCallEvent()
     {
-        if(_earthCache > _eventController.EarthMaxCapacity)
-        {
-            Debug.Log("event de la terre");
-            
-        }
 
         if (_styxCache > _eventController.StyxMaxCapacity)
         {
+            Random.Range(0, 100);
+            
             Debug.Log("event du styx");
+            
         }
 
         if (_underworldCache > _eventController.UnderworldMaxCapacity)
         {
             Debug.Log("event de l'underworld");
+
         }
+
+
 
     }
 
