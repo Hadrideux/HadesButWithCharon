@@ -14,7 +14,7 @@ public class YearsCounter : MonoBehaviour
 
     void Update()
     {
-        _years += Time.deltaTime;
-        _yearsText.text = _years.ToString() + " years";
+        //_years += Time.deltaTime;
+        //_yearsText.text = _years.ToString() + " years";
     }
 }
