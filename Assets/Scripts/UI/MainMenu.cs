@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject _mainMenu = null;
     [SerializeField] private GameObject _settingsMenu = null;
     [SerializeField] private Animator _blackFadeIn = null;
+
+    [SerializeField] private AudioSource _source = null;
+    [SerializeField] private AudioClip _clip = null;
     void Start()
     {
         _mainMenu.SetActive(true);
@@ -16,17 +19,20 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Demo_LowPolyEarth");
+        _source.PlayOneShot(_clip);
+        SceneManager.LoadScene("Game");
     }
 
     public void Quit()
     {
+        _source.PlayOneShot(_clip);
         _blackFadeIn.Play("FadeIn");
         Application.Quit();
     }
 
     public void OpenSettings()
     {
+        _source.PlayOneShot(_clip);
         _mainMenu.SetActive(false);
         _settingsMenu.SetActive(true);
     }
