@@ -12,6 +12,7 @@ public class EventController : MonoBehaviour
     private float _earthRate = 5f;
     [SerializeField]  private float _earthMaxCapacity = 20f;
     private float _styxRate = 2f;
+    private float _styxRateCache = 2f;
     [SerializeField] private float _styxMaxCapacity = 15f;
     private float _underworldRate = 5f;
     [SerializeField] private float _underworldMaxCapacity = 10f;
@@ -22,6 +23,18 @@ public class EventController : MonoBehaviour
     private bool _doorEvent;
 
     #region Properties
+
+    public float StyxRateCache
+    {
+        get
+        {
+            return _styxRateCache;
+        }
+        set
+        {
+            _styxRateCache = value;
+        }
+    }
 
     public bool IsDoor
     {
@@ -128,16 +141,7 @@ public class EventController : MonoBehaviour
         
     }
 
-    private void NewCycle()
-    {
-        _earthRate = Random.Range(10f, 15.1f);
-        _cycleCount++; 
-    }
-
-    private void PickRandomEvent()
-    {
 
 
-    }
 
 }
