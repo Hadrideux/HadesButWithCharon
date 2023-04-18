@@ -52,4 +52,6 @@ public class DoorSouls : MonoBehaviour
             _outputSouls += _doorEvent.LeakValue;
         }
     }
+
+
 }

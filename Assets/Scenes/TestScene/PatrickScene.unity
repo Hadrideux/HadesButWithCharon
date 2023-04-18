@@ -16520,7 +16520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventController: {fileID: 1336573006}
-  _doorSouls: {fileID: 0}
+  _doorSouls: {fileID: 1258284466}
   _eventEarth: {fileID: 1565189741}
   _eventDoor: {fileID: 1565189738}
   _eventTartare: {fileID: 1565189740}
@@ -17231,8 +17231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventController: {fileID: 1336573006}
+  _mutinyCache: 0
   _mutinyCycle: 0
-  _isStopProduct: 0
 --- !u!114 &1565189741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22206,6 +22206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143bab1d8dab81244b91b1904658c3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventTartare: {fileID: 1565189740}
   _underworldManager: {fileID: 2132940967}
   _doorSouls: {fileID: 1258284466}
   _eventController: {fileID: 1336573006}
