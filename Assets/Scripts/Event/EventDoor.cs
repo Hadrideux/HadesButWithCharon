@@ -34,6 +34,7 @@ public class EventDoor : MonoBehaviour
         get => _leakValue; 
         set => _leakValue = value;
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +59,7 @@ public class EventDoor : MonoBehaviour
         }
     }
 
-    // soustraint une partie du cache du styx et les envoi vers le tartare
+    // soustrait une partie du cache du styx et les envoi vers le tartare
     public void LeakEvent()
     {
         if (_leakCycleDuration == 1)
