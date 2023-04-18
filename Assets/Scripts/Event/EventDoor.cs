@@ -47,7 +47,7 @@ public class EventDoor : MonoBehaviour
     }
 
     // Bloque les controles de la porte pendant 1 cycle
-    public void DoorBreakEvent()
+    public void BreakEvent()
     {
         if (_breakCycleDuration == 1)
         {

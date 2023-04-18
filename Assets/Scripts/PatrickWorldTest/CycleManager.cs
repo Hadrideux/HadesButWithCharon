@@ -80,20 +80,25 @@ public class CycleManager : MonoBehaviour
 
         if (_styxCache > _eventController.StyxMaxCapacity)
         {
-            Random.Range(0, 100);
-            
-            Debug.Log("event du styx");
-            
+           int eventChoice = Random.Range(0, 100);
+           if(eventChoice > 30)
+            {
+                _eventDoor.BreakEvent();
+            }
+            if (eventChoice < 30 && eventChoice < 70)
+            {
+                _eventDoor.LeakEvent();
+            }
         }
 
         if (_underworldCache > _eventController.UnderworldMaxCapacity)
         {
-            Debug.Log("event de l'underworld");
-
+            int eventChoice = Random.Range(0, 100);
+            if(eventChoice > 30)
+            {
+                _eventTartare.MutinyEvent();
+            }
         }
-
-
-
     }
 
     private void SetCacheAttribut()
