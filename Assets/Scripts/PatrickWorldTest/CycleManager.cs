@@ -77,26 +77,43 @@ public class CycleManager : MonoBehaviour
 
     private void CheckAndCallEvent()
     {
-
         if (_styxCache > _eventController.StyxMaxCapacity)
         {
-           int eventChoice = Random.Range(0, 100);
-           if(eventChoice > 30)
+            int eventChoice = Random.Range(0, 100);
+
+            if (eventChoice < 30)
             {
                 _eventDoor.BreakEvent();
             }
-            if (eventChoice < 30 && eventChoice < 70)
+            else if (eventChoice > 30 && eventChoice < 70)
             {
                 _eventDoor.LeakEvent();
             }
         }
-
-        if (_underworldCache > _eventController.UnderworldMaxCapacity)
+        else if (_underworldCache > _eventController.UnderworldMaxCapacity)
         {
             int eventChoice = Random.Range(0, 100);
-            if(eventChoice > 30)
+
+            if (eventChoice < 80)
             {
                 _eventTartare.MutinyEvent();
+            }
+        }
+        else 
+        {
+            int eventChoice = Random.Range(0, 100);
+
+            if (eventChoice > 30)
+            {
+                _eventEarth.PandemyEvent();
+            }
+            else if (eventChoice > 30 && eventChoice > 60)
+            {
+                _eventEarth.WarEvent();
+            }
+            else if (eventChoice > 60)
+            {
+                _eventEarth.BabyBoomEvent();
             }
         }
     }
