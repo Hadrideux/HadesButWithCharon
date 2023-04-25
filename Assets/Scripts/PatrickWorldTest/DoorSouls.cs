@@ -11,7 +11,9 @@ public class DoorSouls : MonoBehaviour
     [SerializeField] private EventController _eventController = null;
     [SerializeField] private ParticleSystem _earthSouls = null;
     [SerializeField] private DoorController _doorController = null;
+    private float _styxSouls = 10f;
     private float _stuckSouls = 0f;
+    private float _stuckSoulsWithCache = 0f;
     private float _outputSouls = 0f;
 
     public float StuckSouls
@@ -33,16 +35,16 @@ public class DoorSouls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateDoorSouls();
+        
     }
 
-    private void UpdateDoorSouls()
+    public void UpdateDoorSouls()
     {
         //_eventController.StyxRateCache = _stuckSouls;
-        _stuckSouls = _eventController.StyxRateCache + _eventController.EarthRate - (_eventController.EarthRate * _doorController.CurrentTresholds / 100);
-        Debug.Log(_eventController.StyxRate.ToString());
+        _stuckSouls = (_eventController.EarthRate * _doorController.CurrentTresholds / 100);
+        _stuckSoulsWithCache = (_eventController.EarthRate * _doorController.CurrentTresholds / 100) + _eventController.StyxRateCache;
         ParticleSystem.EmissionModule doorEmission = _doorSoulFlow.emission;
-        doorEmission.rateOverTime = _stuckSouls;
+        doorEmission.rateOverTime = _stuckSoulsWithCache;
         _outputSouls = _eventController.EarthRate - _stuckSouls;
         _eventController.StyxRate = _stuckSouls;
 
@@ -53,5 +55,20 @@ public class DoorSouls : MonoBehaviour
         }
     }
 
+
+    public void newUpdateSouls()
+    {
+        //calcul
+        _styxSouls = _eventController.EarthRate + _stuckSouls;
+        _stuckSouls = _styxSouls * (_doorController.CurrentTresholds / 100);
+        _outputSouls = _styxSouls - _stuckSouls;
+        
+        _eventController.StyxRate = _stuckSouls;
+
+        //set des particules
+        ParticleSystem.EmissionModule doorEmission = _doorSoulFlow.emission;
+        doorEmission.rateOverTime = _stuckSouls;
+
+    }
 
 }

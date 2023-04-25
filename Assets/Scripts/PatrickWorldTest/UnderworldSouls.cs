@@ -14,6 +14,7 @@ public class UnderworldSouls : MonoBehaviour
     public float UnderworldSoulsRate
     {
         get => _underworldSoulsRate;
+        set => _underworldSoulsRate = Mathf.Clamp(value, 0, float.MaxValue);
     }
     
     // Start is called before the first frame update
@@ -26,8 +27,9 @@ public class UnderworldSouls : MonoBehaviour
     void Update()
     {
         ParticleSystem.EmissionModule underworldEmission = _underworldSoulFlow.emission;
-        underworldEmission.rateOverTime = _eventTartare.MutinyCache + _doorSouls.OutputSouls;
-        _underworldSoulsRate = underworldEmission.rateOverTime.constant;
+        
+        UnderworldSoulsRate = _eventTartare.MutinyCache + _doorSouls.OutputSouls;
+        underworldEmission.rateOverTime = UnderworldSoulsRate;
         _eventController.UnderworldRate = _underworldSoulsRate;
     }
 }

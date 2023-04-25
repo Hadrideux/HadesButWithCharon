@@ -9,6 +9,7 @@ public class CycleManager : MonoBehaviour
     [SerializeField] private EventEarth _eventEarth = null;
     [SerializeField] private EventDoor _eventDoor = null;
     [SerializeField] private EventTartare _eventTartare = null;
+    [SerializeField] private bool _eventIsActivated = false;
 
     #region Event Check
     private bool _eventMutiny = false;
@@ -26,7 +27,7 @@ public class CycleManager : MonoBehaviour
     #endregion Status Cache
 
     private float _timer = 0f;
-    private float _delay = 10f;
+    [SerializeField] private float _delay = 10f;
     private int _cycleCount = 0;
     
     public float Timer
@@ -49,7 +50,7 @@ public class CycleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        NewCycle();
     }
 
     // Update is called once per frame
@@ -69,7 +70,7 @@ public class CycleManager : MonoBehaviour
     {
         SetCacheAttribut();
         CheckAndCallEvent();
-
+        _doorSouls.newUpdateSouls();
         _eventController.EarthRate = Random.Range(10f, 15.1f);        
         _cycleCount++;
 
@@ -78,43 +79,46 @@ public class CycleManager : MonoBehaviour
 
     private void CheckAndCallEvent()
     {
-        if (_styxCache > _eventController.StyxMaxCapacity)
+        if(_eventIsActivated == true)
         {
-            int eventChoice = Random.Range(0, 100);
+            if (_styxCache > _eventController.StyxMaxCapacity)
+            {
+                int eventChoice = Random.Range(0, 100);
 
-            if (eventChoice < 30)
-            {
-                _eventDoor.BreakEvent();
+                if (eventChoice < 30)
+                {
+                    _eventDoor.BreakEvent();
+                }
+                else if (eventChoice > 30 && eventChoice < 70)
+                {
+                    _eventDoor.LeakEvent();
+                }
             }
-            else if (eventChoice > 30 && eventChoice < 70)
+            else if (_underworldCache > _eventController.UnderworldMaxCapacity)
             {
-                _eventDoor.LeakEvent();
-            }
-        }
-        else if (_underworldCache > _eventController.UnderworldMaxCapacity)
-        {
-            int eventChoice = Random.Range(0, 100);
+                int eventChoice = Random.Range(0, 100);
 
-            if (eventChoice < 80)
-            {
-                _eventTartare.MutinyEvent();
+                if (eventChoice < 80)
+                {
+                    _eventTartare.MutinyEvent();
+                }
             }
-        }
-        else 
-        {
-            int eventChoice = Random.Range(0, 100);
+            else
+            {
+                int eventChoice = Random.Range(0, 100);
 
-            if (eventChoice > 30)
-            {
-                _eventEarth.PandemyEvent();
-            }
-            else if (eventChoice > 30 && eventChoice > 60)
-            {
-                _eventEarth.WarEvent();
-            }
-            else if (eventChoice > 60)
-            {
-                _eventEarth.BabyBoomEvent();
+                if (eventChoice > 30)
+                {
+                    _eventEarth.PandemyEvent();
+                }
+                else if (eventChoice > 30 && eventChoice > 60)
+                {
+                    _eventEarth.WarEvent();
+                }
+                else if (eventChoice > 60)
+                {
+                    _eventEarth.BabyBoomEvent();
+                }
             }
         }
     }

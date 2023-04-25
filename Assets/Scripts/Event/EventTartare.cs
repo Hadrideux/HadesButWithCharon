@@ -29,6 +29,6 @@ public class EventTartare : MonoBehaviour
     // Empeche le cache d'humain du tartare de se vider pendant 1 cycle
     public void MutinyEvent()
     {
-        _mutinyCache = 20;           
+        _mutinyCache = 10;           
     }    
 }
