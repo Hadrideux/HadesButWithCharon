@@ -12,7 +12,7 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.DownArrow)))
         {
             _tuto.SetActive(false);
         }
