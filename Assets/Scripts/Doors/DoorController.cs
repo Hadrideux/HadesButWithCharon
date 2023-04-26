@@ -43,13 +43,13 @@ public class DoorController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase Angle Door
             {
-                Index++;
+                Index--;
                 DoorAngle();
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow)) //Decrease Angle Door
             {
-                Index--;
+                Index++;
                 DoorAngle();
             }
         }
@@ -61,8 +61,8 @@ public class DoorController : MonoBehaviour
         float newAngle = _doorThresholds[Index] * 90 / 100;
         Vector3 rotation = new Vector3(0, 0, newAngle);
 
-        _leftDoorObject.transform.rotation = Quaternion.Euler(rotation);
-        _rightDoorObject.transform.rotation = Quaternion.Euler(- rotation);
+        _leftDoorObject.transform.rotation = Quaternion.Euler(- rotation);
+        _rightDoorObject.transform.rotation = Quaternion.Euler(rotation);
     }
 
 }
