@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         _source.PlayOneShot(_clip);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void Quit()
