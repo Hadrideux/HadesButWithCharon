@@ -35,6 +35,7 @@ public class DoorController : MonoBehaviour
     void Update()
     {
         OpenDoor();
+        NewDoorTest();
     }
 
     private void OpenDoor()
@@ -44,13 +45,13 @@ public class DoorController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow)) //Increase Angle Door
             {
                 Index--;
-                DoorAngle();
+                
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow)) //Decrease Angle Door
             {
                 Index++;
-                DoorAngle();
+                
             }
         }
     }
@@ -60,9 +61,22 @@ public class DoorController : MonoBehaviour
         _thresholds = _doorThresholds[Index];
         float newAngle = _doorThresholds[Index] * 90 / 100;
         Vector3 rotation = new Vector3(0, 0, newAngle);
-
-        _leftDoorObject.transform.rotation = Quaternion.Euler(- rotation);
+        _leftDoorObject.transform.rotation = Quaternion.Euler(-rotation);
         _rightDoorObject.transform.rotation = Quaternion.Euler(rotation);
+
+    }
+
+    private void NewDoorTest()
+    {
+        _thresholds = _doorThresholds[Index];
+        float newAngle = _doorThresholds[Index] * 90 / 100;
+        Vector3 rotation = new Vector3(0, 0, newAngle);
+
+
+        _leftDoorObject.transform.rotation = Quaternion.Lerp(_leftDoorObject.transform.rotation, Quaternion.Euler(-rotation), Time.deltaTime*4);
+
+        _rightDoorObject.transform.rotation = Quaternion.Lerp(_rightDoorObject.transform.rotation, Quaternion.Euler(rotation), Time.deltaTime*4);
+
     }
 
 }

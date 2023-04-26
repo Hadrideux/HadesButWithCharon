@@ -17,6 +17,8 @@ public class TestingWorldSystem : MonoBehaviour
     [SerializeField] private TMP_Text _earthRatePourcent = null;
     [SerializeField] private TMP_Text _styxRatePourcent = null;
     [SerializeField] private TMP_Text _underworldRatePourcent = null;
+
+
     private float _earthRate; 
     private float _styxRate;
     private float _underworldRate;
@@ -66,7 +68,7 @@ public class TestingWorldSystem : MonoBehaviour
         _styxBarImage.fillAmount = Mathf.Lerp (_styxBarImage.fillAmount, (_eventController.StyxRate / _eventController.StyxMaxCapacity), Time.deltaTime * 2);
         _underworldBarImage.fillAmount = Mathf.Lerp (_underworldBarImage.fillAmount, (_eventController.UnderworldRate / _eventController.UnderworldMaxCapacity), Time.deltaTime * 2);
 
-        
+
     }
 
 }
