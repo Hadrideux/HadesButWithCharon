@@ -60,7 +60,7 @@ public class DoorSouls : MonoBehaviour
     {
         //calcul
         _styxSouls = _eventController.EarthRate + _stuckSouls;
-        _stuckSouls = _styxSouls * (_doorController.CurrentTresholds / 100);
+        _stuckSouls = _styxSouls - (_styxSouls * (_doorController.CurrentTresholds / 100));
         _outputSouls = _styxSouls - _stuckSouls;
         
         _eventController.StyxRate = _stuckSouls;

@@ -11,8 +11,6 @@ public class SettingsMenu : MonoBehaviour
     #region Attributs
     [SerializeField] private GameObject _mainMenu = null;
     [SerializeField] private GameObject _settingsMenu = null;
-    [SerializeField] private GameObject _pauseMenu = null;
-    [SerializeField] private GameObject _pauseSettingsMenu = null;
 
     [SerializeField] private Toggle _fullScreenToggle = null;
     [SerializeField] private Slider _brightnessSlider = null;
@@ -49,14 +47,6 @@ public class SettingsMenu : MonoBehaviour
         _mainMenu.SetActive(true);
         _settingsMenu.SetActive(false);
     }
-
-    public void BackPauseMenu()
-    {
-        _source.PlayOneShot(_click);
-        _pauseMenu.SetActive(true);
-        _pauseSettingsMenu.SetActive(false);
-    }
-
 
     public void SetFullscreen(bool isFullscreen)
     {
