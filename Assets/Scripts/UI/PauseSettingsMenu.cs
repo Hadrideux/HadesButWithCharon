@@ -6,11 +6,11 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering.PostProcessing;
 
-public class SettingsMenu : MonoBehaviour
+public class PauseSettingsMenu : MonoBehaviour
 {
     #region Attributs
-    [SerializeField] private GameObject _mainMenu = null;
-    [SerializeField] private GameObject _settingsMenu = null;
+    [SerializeField] private GameObject _pauseMenu = null;
+    [SerializeField] private GameObject _pauseSettingsMenu = null;
 
     [SerializeField] private Toggle _fullScreenToggle = null;
     [SerializeField] private Slider _brightnessSlider = null;
@@ -41,11 +41,11 @@ public class SettingsMenu : MonoBehaviour
 
     }
 
-    public void BackMainMenu()
+    public void BackPauseMenu()
     {
         _source.PlayOneShot(_click);
-        _mainMenu.SetActive(true);
-        _settingsMenu.SetActive(false);
+        _pauseMenu.SetActive(true);
+        _pauseSettingsMenu.SetActive(false);
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -109,7 +109,7 @@ public class SettingsMenu : MonoBehaviour
 }
 
 [System.Serializable]
-public class ResolutionIndex
+public class PauseResolutionIndex
 {
     public int horizontal;
     public int vertical;
