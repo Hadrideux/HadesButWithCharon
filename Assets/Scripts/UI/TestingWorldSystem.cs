@@ -60,7 +60,7 @@ public class TestingWorldSystem : MonoBehaviour
         _underworldRatePourcent.text = (_eventController.UnderworldRate/ _eventController.UnderworldMaxCapacity*100).ToString("F1") + "%";
 
 
-        _cycleBarImage.fillAmount = _cycleManager.Timer / 10;
+        _cycleBarImage.fillAmount = _cycleManager.Timer / 5;
 
         _earthBarImage.fillAmount = Mathf.Lerp (_earthBarImage.fillAmount, (_eventController.EarthRate / _eventController.EarthMaxCapacity), Time.deltaTime*2);
         _styxBarImage.fillAmount = Mathf.Lerp (_styxBarImage.fillAmount, (_eventController.StyxRate / _eventController.StyxMaxCapacity), Time.deltaTime * 2);
