@@ -70,12 +70,12 @@ public class DoorController : MonoBehaviour
     {
         _thresholds = _doorThresholds[Index];
         float newAngle = _doorThresholds[Index] * 90 / 100;
-        Vector3 rotation = new Vector3(_leftDoorObject.transform.localPosition.x, _leftDoorObject.transform.localPosition.y, newAngle);
+        Vector3 rotation = new Vector3(0, newAngle, 0);
 
+        _leftDoorObject.transform.localRotation = Quaternion.Lerp(_leftDoorObject.transform.localRotation, Quaternion.Euler(-rotation), Time.deltaTime*4);
+        _rightDoorObject.transform.localRotation = Quaternion.Lerp(_rightDoorObject.transform.localRotation, Quaternion.Euler(rotation), Time.deltaTime * 4);
 
-        _leftDoorObject.transform.rotation = Quaternion.Lerp(_leftDoorObject.transform.rotation, Quaternion.Euler(-rotation), Time.deltaTime*4);
-
-        _rightDoorObject.transform.rotation = Quaternion.Lerp(_rightDoorObject.transform.rotation, Quaternion.Euler(rotation), Time.deltaTime*4);
+        
 
     }
 
