@@ -5,6 +5,8 @@ using UnityEngine;
 public class EventEarth : MonoBehaviour
 {
     [SerializeField] private EventController _eventController = null;
+    [SerializeField] private FlameEvent _flameEvent = null;
+    [SerializeField] private CycleManager _cycleManager = null;
     private float _pandemyDeathValue = 0f;
     private int _pandemyCycleDuration = 3;
 
@@ -39,11 +41,24 @@ public class EventEarth : MonoBehaviour
     // augmente la production d'humain pendant x cycle d'une valeur aléatoire
     public void WarEvent()
     {
-        _warCycleDuration = Random.Range(3, 6); 
+        StartCoroutine(WarEventCoroutine());
+
+
+    }
+
+    IEnumerator WarEventCoroutine()
+    {
+        _warCycleDuration = Random.Range(3, 6);
         for (int i = 0; i < _warCycleDuration; i++)
         {
-            _eventController.EarthRate = Random.Range(20, 25);
-            i++;
+            _eventController.EarthRate = Random.Range(20f, 25f);
+
+            if (_warCycleDuration > 0)
+            {
+                _flameEvent.SpawnFlames();
+            }
+
+            yield return new WaitForSeconds(5f);
         }
     }
 

@@ -10,6 +10,31 @@ public class CycleManager : MonoBehaviour
     [SerializeField] private EventDoor _eventDoor = null;
     [SerializeField] private EventTartare _eventTartare = null;
     [SerializeField] private bool _eventIsActivated = false;
+    private float _randomMin = 10f;
+    private float _randomMax = 15f;
+
+    public float RandomMin
+    {
+        get
+        {
+            return _randomMin;
+        }
+        set
+        {
+            _randomMin = value;
+        }
+    }
+    public float RandomMax
+    {
+        get
+        {
+            return _randomMax;
+        }
+        set
+        {
+            _randomMax = value;
+        }
+    }
 
     #region Event Check
     private bool _eventMutiny = false;
@@ -71,7 +96,7 @@ public class CycleManager : MonoBehaviour
         SetCacheAttribut();
         CheckAndCallEvent();
         _doorSouls.newUpdateSouls();
-        _eventController.EarthRate = Random.Range(10f, 15.1f);        
+        _eventController.EarthRate = Random.Range(_randomMin, _randomMax);        
         _cycleCount++;
 
 
@@ -101,24 +126,23 @@ public class CycleManager : MonoBehaviour
                 if (eventChoice < 80)
                 {
                     _eventTartare.MutinyEvent();
+
                 }
             }
             else
             {
                 int eventChoice = Random.Range(0, 100);
-
-                if (eventChoice > 30)
-                {
-                    _eventEarth.PandemyEvent();
-                }
-                else if (eventChoice > 30 && eventChoice > 60)
+                if(eventChoice <= 50)
                 {
                     _eventEarth.WarEvent();
+                    Debug.Log("WarEventCalled");
                 }
-                else if (eventChoice > 60)
+                else if (eventChoice > 50)
                 {
-                    _eventEarth.BabyBoomEvent();
+                    _eventController.EarthRate = Random.Range (10f, 15.1f);
+                    Debug.Log("reset to normal random");
                 }
+
             }
         }
     }

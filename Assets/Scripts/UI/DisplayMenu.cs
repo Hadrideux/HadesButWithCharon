@@ -23,8 +23,7 @@ public class DisplayMenu : MonoBehaviour
         GameOver();
         DisplayCharon();
         CharonTimer();
-        Debug.Log(_charonTimer);
-        Debug.Log(_isCharonTimerUseful);
+
 
     }
 
