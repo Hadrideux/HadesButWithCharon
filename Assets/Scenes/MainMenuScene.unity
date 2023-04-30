@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HADES BUT WITH CHARON
+  m_text: Underworlds Manager
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62f537c96c8b8da48a44cf959a4d5ec3, type: 2}
   m_sharedMaterial: {fileID: 5430823465824291924, guid: 62f537c96c8b8da48a44cf959a4d5ec3, type: 2}
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 79
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1677,7 +1677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1592139262
 RectTransform:
   m_ObjectHideFlags: 0
