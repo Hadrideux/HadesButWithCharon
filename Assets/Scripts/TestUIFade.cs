@@ -50,6 +50,5 @@ public class TestUIFade : MonoBehaviour
             _text.color = _textColor;
             _isVisible = true;
         }
-        Debug.Log(_textColor.a);
     }
 }
