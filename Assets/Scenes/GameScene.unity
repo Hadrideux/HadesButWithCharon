@@ -985,6 +985,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5751133002707281187, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
+      propertyPath: m_AnimationTriggers.m_PressedTrigger
+      value: Pressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751133002707281187, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
+      propertyPath: m_AnimationTriggers.m_DisabledTrigger
+      value: Disabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751133002707281187, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
+      propertyPath: m_AnimationTriggers.m_SelectedTrigger
+      value: Selected
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751133002707281187, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 241284665}
@@ -1715,9 +1727,9 @@ MonoBehaviour:
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 378259459}
   m_OnClick:
@@ -1791,7 +1803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &445153678
 Animator:
   serializedVersion: 5
@@ -1863,7 +1875,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 893436585}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2784,9 +2796,9 @@ MonoBehaviour:
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: 
-    m_SelectedTrigger: 
-    m_DisabledTrigger: 
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 628979592}
   m_OnClick:
@@ -3449,11 +3461,11 @@ RectTransform:
   - {fileID: 1910352636}
   - {fileID: 364738469}
   - {fileID: 198043184}
+  - {fileID: 1182018319}
   - {fileID: 1090811553}
   - {fileID: 445153681}
   - {fileID: 2022068345}
   - {fileID: 1135703450}
-  - {fileID: 1182018319}
   - {fileID: 241284663}
   m_Father: {fileID: 1825192388}
   m_RootOrder: 0
@@ -14049,7 +14061,7 @@ RectTransform:
   - {fileID: 2041668535}
   - {fileID: 917054014}
   m_Father: {fileID: 893436585}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -14091,7 +14103,7 @@ RectTransform:
   - {fileID: 378259456}
   - {fileID: 628979589}
   m_Father: {fileID: 893436585}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14257,7 +14269,7 @@ RectTransform:
   - {fileID: 965221871}
   - {fileID: 1203996719}
   m_Father: {fileID: 893436585}
-  m_RootOrder: 11
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -19626,7 +19638,7 @@ MonoBehaviour:
   _doorSouls: {fileID: 1258284466}
   _eventEarth: {fileID: 1565189741}
   _eventDoor: {fileID: 1565189738}
-  _eventTartare: {fileID: 1565189740}
+  _eventUnderworld: {fileID: 1565189740}
   _eventIsActivated: 1
   _eventAnnounce: {fileID: 1203996721}
   _GameOverMenu: {fileID: 1135703449}
@@ -20580,7 +20592,6 @@ MonoBehaviour:
   _spawnPos:
   - {fileID: 182334091}
   _source: {fileID: 0}
-  _click: {fileID: 0}
 --- !u!1 &1571119626
 GameObject:
   m_ObjectHideFlags: 0
@@ -25677,7 +25688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 143bab1d8dab81244b91b1904658c3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventTartare: {fileID: 1565189740}
+  _eventUnderworld: {fileID: 1565189740}
   _doorSouls: {fileID: 1258284466}
   _eventController: {fileID: 1336573006}
 --- !u!1 &1694564767
@@ -31865,7 +31876,6 @@ MonoBehaviour:
   _quitDesktop: {fileID: 1755365721}
   _source: {fileID: 1485788191}
   _click: {fileID: 8300000, guid: e08ed1ff00bfc4043b3de67bf889ec39, type: 3}
-  _hold: {fileID: 8300000, guid: 3034bc0b23412fc469059af66b27d41a, type: 3}
 --- !u!224 &2022068345
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31886,7 +31896,7 @@ RectTransform:
   - {fileID: 1755365726}
   - {fileID: 749935884}
   m_Father: {fileID: 893436585}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
