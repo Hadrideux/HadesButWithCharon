@@ -15,6 +15,9 @@ public class CycleManager : MonoBehaviour
     private float _randomMax = 15f;
 
     [SerializeField] private TextMeshProUGUI _eventAnnounce = null;
+    [SerializeField] private GameObject _GameOverMenu = null;
+    private bool _styxDefeatCondition = false;
+    private bool _underworldDefeatCondition = false;
 
     public float RandomMin
     {
@@ -112,6 +115,12 @@ public class CycleManager : MonoBehaviour
         {
             if (_styxCache > _eventController.StyxMaxCapacity)
             {
+                if (_styxDefeatCondition == true)
+                {
+                    GameOver();
+                }
+                _styxDefeatCondition = true;
+
                 int eventChoice = Random.Range(0, 100);
 
                 if (eventChoice < 30)
@@ -125,6 +134,11 @@ public class CycleManager : MonoBehaviour
             }
             else if (_underworldCache > _eventController.UnderworldMaxCapacity)
             {
+                if (_underworldDefeatCondition == true)
+                {
+                    GameOver();
+                }
+                _underworldDefeatCondition = true;
                 int eventChoice = Random.Range(0, 100);
                 _eventAnnounce.text = "";
                 if (eventChoice < 80)
@@ -136,6 +150,9 @@ public class CycleManager : MonoBehaviour
             }
             else
             {
+                _styxDefeatCondition = false;
+                _underworldDefeatCondition = false;
+
                 int eventChoice = Random.Range(0, 100);
                 _eventAnnounce.text = "";
 
@@ -147,7 +164,7 @@ public class CycleManager : MonoBehaviour
                 else if (eventChoice > 50)
                 {
                     _eventController.EarthRate = Random.Range (10f, 15.1f);
-                    Debug.Log("reset to normal random");
+                    
                 }
 
             }
@@ -161,5 +178,13 @@ public class CycleManager : MonoBehaviour
         _styxCache = _eventController.StyxRate;
         _underworldCache = _eventController.UnderworldRate;
         _eventController.StyxRateCache = _doorSouls.StuckSouls;
+    }
+
+    private void GameOver()
+    {
+        _GameOverMenu.SetActive(true);
+        Time.timeScale = 0;
+        
+
     }
 }

@@ -40,7 +40,7 @@ public class EventEarth : MonoBehaviour
     // augmente la production d'humain pendant x cycle d'une valeur aléatoire
     public void WarEvent()
     {
-        StartCoroutine(WarEventCoroutine());
+        //StartCoroutine(WarEventCoroutine());
     }
 
     IEnumerator WarEventCoroutine()

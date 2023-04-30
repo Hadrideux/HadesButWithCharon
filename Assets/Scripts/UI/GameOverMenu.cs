@@ -11,11 +11,13 @@ public class GameOverMenu : MonoBehaviour
     {
         _isGameOverOpen=false;
         SceneManager.LoadScene("GameScene");
+        Time.timeScale = 1;
     }
 
     public void Quit()
     {
         _isGameOverOpen=false;
         SceneManager.LoadScene("MainMenuScene");
+        Time.timeScale = 1;
     }
 }
