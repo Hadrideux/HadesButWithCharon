@@ -41,8 +41,6 @@ public class EventEarth : MonoBehaviour
     public void WarEvent()
     {
         StartCoroutine(WarEventCoroutine());
-
-
     }
 
     IEnumerator WarEventCoroutine()
