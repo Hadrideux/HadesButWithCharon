@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CycleManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class CycleManager : MonoBehaviour
     [SerializeField] private bool _eventIsActivated = false;
     private float _randomMin = 10f;
     private float _randomMax = 15f;
+
+    [SerializeField] private TextMeshProUGUI _eventAnnounce = null;
 
     public float RandomMin
     {
@@ -76,6 +79,7 @@ public class CycleManager : MonoBehaviour
     void Start()
     {
         NewCycle();
+        _eventAnnounce.text = "";
     }
 
     // Update is called once per frame
@@ -122,20 +126,23 @@ public class CycleManager : MonoBehaviour
             else if (_underworldCache > _eventController.UnderworldMaxCapacity)
             {
                 int eventChoice = Random.Range(0, 100);
-
+                _eventAnnounce.text = "";
                 if (eventChoice < 80)
                 {
                     _eventTartare.MutinyEvent();
+                    _eventAnnounce.text = "Vos Démons sont en plein burnout, ils prépare un mutinerie";
 
                 }
             }
             else
             {
                 int eventChoice = Random.Range(0, 100);
-                if(eventChoice <= 50)
+                _eventAnnounce.text = "";
+
+                if (eventChoice <= 50)
                 {
                     _eventEarth.WarEvent();
-                    Debug.Log("WarEventCalled");
+                    _eventAnnounce.text = "Une Guerre se prépare chez les Humains";
                 }
                 else if (eventChoice > 50)
                 {
