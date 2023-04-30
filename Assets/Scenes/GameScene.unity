@@ -622,8 +622,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -89.36914, y: -89.3689}
-  m_SizeDelta: {x: 138.7379, y: 138.7379}
+  m_AnchoredPosition: {x: -90, y: -90}
+  m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &241284662
 PrefabInstance:
@@ -3453,8 +3453,8 @@ RectTransform:
   - {fileID: 445153681}
   - {fileID: 2022068345}
   - {fileID: 1135703450}
-  - {fileID: 241284663}
   - {fileID: 1182018319}
+  - {fileID: 241284663}
   m_Father: {fileID: 1825192388}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14257,7 +14257,7 @@ RectTransform:
   - {fileID: 965221871}
   - {fileID: 1203996719}
   m_Father: {fileID: 893436585}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -20301,10 +20301,10 @@ RectTransform:
   m_Father: {fileID: 239870745}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -68.15855, y: -68.15846}
-  m_SizeDelta: {x: 96.3169, y: 96.3169}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1510057304
 MonoBehaviour:
@@ -20439,10 +20439,10 @@ RectTransform:
   m_Father: {fileID: 239870745}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -69.369026, y: -69.3689}
-  m_SizeDelta: {x: 155.3399, y: 155.3399}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514628034
 MonoBehaviour:
@@ -31040,8 +31040,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -153, y: -86}
-  m_SizeDelta: {x: 153, y: 86}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1001 &1807699278
 PrefabInstance:
