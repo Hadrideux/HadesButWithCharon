@@ -18,6 +18,10 @@ public class PauseMenu : MonoBehaviour
 
     public static bool _isPauseMenuOpen = false;
 
+    [SerializeField] private AudioSource _source = null;
+    [SerializeField] private AudioClip _click = null;
+    [SerializeField] private AudioClip _hold = null;
+
     #endregion Attributs
 
     void Start()
@@ -30,18 +34,21 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        _source.PlayOneShot(_click);
         _pauseMenu.SetActive(false);
         _settingsMenu.SetActive(false);
         _isPauseMenuOpen=false;
     }
     public void OpenSettings()
     {
+        _source.PlayOneShot(_click);
         _pauseMenu.SetActive(false);
         _settingsMenu.SetActive(true);
     }
 
     public void Quit()
     {
+        _source.PlayOneShot(_click);
         _quitMainMenu.SetActive(true);
         _quitDesktop.SetActive(true);
         _quitMainMenuAnimator.Play("Appear");
@@ -51,12 +58,14 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitToMainMenu()
     {
+        _source.PlayOneShot(_click);
         PauseMenu._isPauseMenuOpen = false;
         SceneManager.LoadScene("MainMenuScene");
     }
     public void QuitToDesktop()
     {
-        _blackFadeIn.Play("FadeIn");
+        _source.PlayOneShot(_click);
+        //_blackFadeIn.Play("FadeIn");
         Application.Quit();
     }
 }

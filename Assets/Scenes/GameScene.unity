@@ -648,9 +648,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 893436585}
     m_Modifications:
     - target: {fileID: 1270188130, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
+      propertyPath: _hold
+      value: 
+      objectReference: {fileID: 8300000, guid: 3034bc0b23412fc469059af66b27d41a, type: 3}
+    - target: {fileID: 1270188130, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
+      propertyPath: _click
+      value: 
+      objectReference: {fileID: 8300000, guid: e08ed1ff00bfc4043b3de67bf889ec39, type: 3}
+    - target: {fileID: 1270188130, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
       propertyPath: _layer
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1270188130, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
+      propertyPath: _source
+      value: 
+      objectReference: {fileID: 1485788191}
     - target: {fileID: 1270188130, guid: 44ba580648eab37438ed3d5d6c533d63, type: 3}
       propertyPath: _pauseMenu
       value: 
@@ -31588,7 +31600,7 @@ Transform:
   m_GameObject: {fileID: 1963127542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 50, y: 50, z: 1}
+  m_LocalScale: {x: 55, y: 55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -31672,6 +31684,9 @@ MonoBehaviour:
   _quitMainMenuAnimator: {fileID: 749935880}
   _quitDesktopAnimator: {fileID: 1755365722}
   _blackFadeIn: {fileID: 445153678}
+  _source: {fileID: 1485788191}
+  _click: {fileID: 8300000, guid: e08ed1ff00bfc4043b3de67bf889ec39, type: 3}
+  _hold: {fileID: 8300000, guid: 3034bc0b23412fc469059af66b27d41a, type: 3}
 --- !u!224 &2022068345
 RectTransform:
   m_ObjectHideFlags: 0

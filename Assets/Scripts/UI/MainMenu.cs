@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         _source.PlayOneShot(_clip);
-        _blackFadeIn.Play("FadeIn");
+        //_blackFadeIn.Play("FadeIn");
         Application.Quit();
     }
 
