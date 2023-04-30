@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    #region Attributes
     [SerializeField] private GameObject _mainMenu = null;
     [SerializeField] private GameObject _settingsMenu = null;
-    [SerializeField] private Animator _blackFadeIn = null;
-
+    
     [SerializeField] private AudioSource _source = null;
     [SerializeField] private AudioClip _clip = null;
-    void Start()
+    #endregion Attributes
+
+    #region Methods
+    private void Start()
     {
         _mainMenu.SetActive(true);
         _settingsMenu.SetActive(false);
@@ -26,7 +29,6 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         _source.PlayOneShot(_clip);
-        //_blackFadeIn.Play("FadeIn");
         Application.Quit();
     }
 
@@ -36,4 +38,5 @@ public class MainMenu : MonoBehaviour
         _mainMenu.SetActive(false);
         _settingsMenu.SetActive(true);
     }
+    #endregion Methods
 }

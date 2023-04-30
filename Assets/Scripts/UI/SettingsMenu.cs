@@ -8,14 +8,14 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class SettingsMenu : MonoBehaviour
 {
-    #region Attributs
+    #region Attributes
     [SerializeField] private GameObject _mainMenu = null;
     [SerializeField] private GameObject _settingsMenu = null;
 
     [SerializeField] private Toggle _fullScreenToggle = null;
     [SerializeField] private Slider _brightnessSlider = null;
     [SerializeField] private PostProcessProfile _brightness = null;
-    [SerializeField] private PostProcessLayer _layer = null;
+    private PostProcessLayer _layer = null;
     private float _normalBrightness = 1;
     private AutoExposure _exposure;
 
@@ -26,18 +26,15 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private AudioSource _source = null;
     [SerializeField] private AudioClip _click = null;
     [SerializeField] private AudioClip _hold = null;
-    #endregion Attributs
+    #endregion Attributes
 
+
+    #region Methods
     void Start()
     {
         _brightness.TryGetSettings(out _exposure);
         _brightnessSlider.value = _normalBrightness;
         SetBrightness(_brightnessSlider.value);
-
-    }
-
-    void Update()
-    {
 
     }
 
@@ -106,6 +103,7 @@ public class SettingsMenu : MonoBehaviour
             _exposure.keyValue.value = _normalBrightness;
         }
     }
+    #endregion Methods
 }
 
 [System.Serializable]

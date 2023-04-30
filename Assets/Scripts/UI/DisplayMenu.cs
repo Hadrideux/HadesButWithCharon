@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class DisplayMenu : MonoBehaviour
 {
+    #region Attributes
     [SerializeField] private GameObject _pauseMenu = null;
     [SerializeField] private GameObject _charon = null;
     [SerializeField] private GameObject _gameOver = null;
     private float _charonTimer = 10f;
     private bool _isCharonTimerEnd = false;
     private bool _isCharonTimerUseful = true;
-    void Start()
+    #endregion Attributes
+
+    #region Methods
+    private void Start()
     {
         _gameOver.SetActive(false);
         _charon.SetActive(false);
         _pauseMenu.SetActive(true);
     }
 
-    void Update()
+    private void Update()
     {
         OpenPauseMenu();
         GameOver();
@@ -49,7 +53,7 @@ public class DisplayMenu : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P) && PauseMenu._isPauseMenuOpen == false)
         {
             _pauseMenu.SetActive(true);
-            Time.timeScale = 1; //Désactiver les managers
+            Time.timeScale = 1; //Desactivate managers
             _charon.SetActive(false);
             PauseMenu._isPauseMenuOpen = true;
         }
@@ -62,15 +66,17 @@ public class DisplayMenu : MonoBehaviour
             _gameOver.SetActive(true);
             _charon.SetActive(false);
             GameOverMenu._isGameOverOpen = true;
-            //désactiver les managers
+            //Desactivate managers
         }
     }
 
     private void DisplayCharon()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.DownArrow)) && _isCharonTimerEnd == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (Input.GetKeyDown(KeyCode.DownArrow)) && _isCharonTimerEnd == true)
         {
             _charon.SetActive(true);
         }
     }
+    #endregion Methods
+
 }
