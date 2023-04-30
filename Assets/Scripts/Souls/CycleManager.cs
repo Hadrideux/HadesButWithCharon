@@ -16,6 +16,8 @@ public class CycleManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _eventAnnounce = null;
     [SerializeField] private GameObject _GameOverMenu = null;
+    [SerializeField] private GameObject _warningStyxAlert = null;
+    [SerializeField] private GameObject _warningUnderworldAlert = null;
     private bool _styxDefeatCondition = false;
     private bool _underworldDefeatCondition = false;
 
@@ -92,6 +94,8 @@ public class CycleManager : MonoBehaviour
         _timer += Time.deltaTime;
         if (_timer > _delay)
         {
+            _warningStyxAlert.SetActive(false);
+            _warningUnderworldAlert.SetActive(false);
             NewCycle();
             _timer = 0f;
         }
@@ -115,6 +119,7 @@ public class CycleManager : MonoBehaviour
         {
             if (_styxCache > _eventController.StyxMaxCapacity)
             {
+                _warningStyxAlert.SetActive(true);
                 if (_styxDefeatCondition == true)
                 {
                     GameOver();
@@ -134,6 +139,7 @@ public class CycleManager : MonoBehaviour
             }
             else if (_underworldCache > _eventController.UnderworldMaxCapacity)
             {
+                _warningUnderworldAlert.SetActive(true);
                 if (_underworldDefeatCondition == true)
                 {
                     GameOver();
