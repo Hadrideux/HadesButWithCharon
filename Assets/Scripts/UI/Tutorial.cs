@@ -5,14 +5,15 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
     [SerializeField] private GameObject _tuto = null;
-    void Start()
+
+    private void Start()
     {
         _tuto.SetActive(true);
     }
 
-    void Update()
+    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow) || (Input.GetKeyDown(KeyCode.DownArrow)))
+        if(Input.GetKeyDown(KeyCode.UpArrow) && (Input.GetKeyDown(KeyCode.DownArrow)))
         {
             _tuto.SetActive(false);
         }

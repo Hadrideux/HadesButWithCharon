@@ -7,20 +7,10 @@ public class GameOverMenu : MonoBehaviour
 {
     public static bool _isGameOverOpen = false;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
    public void Retry()
     {
         _isGameOverOpen=false;
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameScene");
     }
 
     public void Quit()
