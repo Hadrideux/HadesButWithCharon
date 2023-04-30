@@ -14042,7 +14042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1090811553}
   m_Layer: 5
-  m_Name: Turorial
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14175,7 +14175,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -20389,6 +20389,8 @@ MonoBehaviour:
   _earth: {fileID: 1279492180}
   _spawnPos:
   - {fileID: 182334091}
+  _source: {fileID: 0}
+  _click: {fileID: 0}
 --- !u!1 &1571119626
 GameObject:
   m_ObjectHideFlags: 0
@@ -25486,7 +25488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventTartare: {fileID: 1565189740}
-  _underworldManager: {fileID: 2132940967}
   _doorSouls: {fileID: 1258284466}
   _eventController: {fileID: 1336573006}
 --- !u!1 &1694564767
@@ -31799,7 +31800,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2132940966}
-  - component: {fileID: 2132940967}
   m_Layer: 0
   m_Name: UnderworldManager
   m_TagString: Untagged
@@ -31823,15 +31823,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2132940967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2132940965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65a50a3f8328b2e4eb2f6667a98e04ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

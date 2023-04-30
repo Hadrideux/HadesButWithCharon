@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
-    [SerializeField] private EEventName _eventToCall = EEventName.BabyBoomEvent;
-    [SerializeField] private EarthSouls _earthSouls = null;
-    [SerializeField] private DoorSouls _doorSouls = null;
-    [SerializeField] private UnderworldSouls _underworldSouls = null;
 
     private float _earthRate = 5f;
     [SerializeField]  private float _earthMaxCapacity = 20f;
@@ -17,8 +13,6 @@ public class EventController : MonoBehaviour
     private float _underworldRate = 5f;
     [SerializeField] private float _underworldMaxCapacity = 10f;
     private int _cycleCount = 0;
-    private float _timer = 0f;
-    private float _delay = 10f;
 
     private bool _doorEvent;
 
@@ -126,22 +120,5 @@ public class EventController : MonoBehaviour
     }
 
 #endregion Properties
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-        
-    }
-
-
-
 
 }

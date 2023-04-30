@@ -37,12 +37,12 @@ public class CycleManager : MonoBehaviour
     }
 
     #region Event Check
-    private bool _eventMutiny = false;
+    /*private bool _eventMutiny = false;
     private bool _eventPandemy = false;
     private bool _eventWar = false;
     private bool _eventBabyBoom = false;
     private bool _eventDoorBreak = false;
-    private bool _eventLeak = false;
+    private bool _eventLeak = false;*/
     #endregion Event Check
 
     #region Status Cache

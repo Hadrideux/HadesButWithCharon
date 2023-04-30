@@ -7,7 +7,6 @@ public class UnderworldSouls : MonoBehaviour
 {
     [SerializeField] private EventTartare _eventTartare = null;
     private ParticleSystem _underworldSoulFlow;
-    [SerializeField] private UnderworldManager _underworldManager = null;
     [SerializeField] private DoorSouls _doorSouls = null;
     [SerializeField] private EventController _eventController = null;
     private float _underworldSoulsRate;
