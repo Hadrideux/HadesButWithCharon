@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    [SerializeField] private EventController _eventController = null;
 
     [SerializeField] private float[] _doorThresholds = null;
     [SerializeField] private float _thresholds = 0;

@@ -5,7 +5,6 @@ using UnityEngine;
 public class EarthSouls : MonoBehaviour
 {
     private ParticleSystem _earthSoulFlow;
-    [SerializeField] private EarthManager _earthManager = null;
     [SerializeField] private EventController _eventController = null;
     private float _earthSoulsRate = 5f;
     public float EarthSoulsRate

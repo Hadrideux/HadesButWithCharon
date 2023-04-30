@@ -6,7 +6,6 @@ public class EventEarth : MonoBehaviour
 {
     [SerializeField] private EventController _eventController = null;
     [SerializeField] private FlameEvent _flameEvent = null;
-    [SerializeField] private CycleManager _cycleManager = null;
     private float _pandemyDeathValue = 0f;
     private int _pandemyCycleDuration = 3;
 

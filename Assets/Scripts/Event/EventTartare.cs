@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class EventTartare : MonoBehaviour
 {
-    [SerializeField] private EventController _eventController = null;
 
     [SerializeField] private float _mutinyCache = 0f;
-    [SerializeField] private int _mutinyCycle = 0;
 
     public float MutinyCache
     {

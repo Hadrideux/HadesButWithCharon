@@ -7,9 +7,7 @@ public class DoorSouls : MonoBehaviour
     [SerializeField] private EventDoor _doorEvent = null;
 
     private ParticleSystem _doorSoulFlow;
-    [SerializeField] private EarthManager _earthManager = null;
     [SerializeField] private EventController _eventController = null;
-    [SerializeField] private ParticleSystem _earthSouls = null;
     [SerializeField] private DoorController _doorController = null;
     private float _styxSouls = 10f;
     private float _stuckSouls = 0f;
