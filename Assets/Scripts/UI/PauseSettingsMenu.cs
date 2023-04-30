@@ -15,7 +15,6 @@ public class PauseSettingsMenu : MonoBehaviour
     [SerializeField] private Toggle _fullScreenToggle = null;
     [SerializeField] private Slider _brightnessSlider = null;
     [SerializeField] private PostProcessProfile _brightness = null;
-    private PostProcessLayer _layer = null;
     private float _normalBrightness = 1;
     private AutoExposure _exposure;
 

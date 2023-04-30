@@ -9,7 +9,7 @@ public class CycleManager : MonoBehaviour
     [SerializeField] private DoorSouls _doorSouls = null;
     [SerializeField] private EventEarth _eventEarth = null;
     [SerializeField] private EventDoor _eventDoor = null;
-    [SerializeField] private EventTartare _eventTartare = null;
+    [SerializeField] private EventUnderworld _eventUnderworld = null;
     [SerializeField] private bool _eventIsActivated = false;
     private float _randomMin = 10f;
     private float _randomMax = 15f;
@@ -143,8 +143,8 @@ public class CycleManager : MonoBehaviour
                 _eventAnnounce.text = "";
                 if (eventChoice < 80)
                 {
-                    _eventTartare.MutinyEvent();
-                    _eventAnnounce.text = "Vos Démons sont en plein burnout, ils prépare un mutinerie";
+                    _eventUnderworld.MutinyEvent();
+                    _eventAnnounce.text = "Your Demons are in full overwork, they prepare a mutiny";
 
                 }
             }
@@ -159,7 +159,7 @@ public class CycleManager : MonoBehaviour
                 if (eventChoice <= 50)
                 {
                     _eventEarth.WarEvent();
-                    _eventAnnounce.text = "Une Guerre se prépare chez les Humains";
+                    _eventAnnounce.text = "A War is brewing among Humans";
                 }
                 else if (eventChoice > 50)
                 {
@@ -173,7 +173,7 @@ public class CycleManager : MonoBehaviour
 
     private void SetCacheAttribut()
     {
-        _eventTartare.MutinyCache -= 5;
+        _eventUnderworld.MutinyCache -= 5;
         _earthCache = _eventController.EarthRate;
         _styxCache = _eventController.StyxRate;
         _underworldCache = _eventController.UnderworldRate;
@@ -183,7 +183,7 @@ public class CycleManager : MonoBehaviour
     private void GameOver()
     {
         _GameOverMenu.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 1;
         
 
     }

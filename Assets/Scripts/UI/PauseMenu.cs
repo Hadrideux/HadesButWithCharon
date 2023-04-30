@@ -15,7 +15,6 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private AudioSource _source = null;
     [SerializeField] private AudioClip _click = null;
-    [SerializeField] private AudioClip _hold = null;
 
     #endregion Attributes
 

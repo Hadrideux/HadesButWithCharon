@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventTartare : MonoBehaviour
+public class EventUnderworld : MonoBehaviour
 {
 
     [SerializeField] private float _mutinyCache = 0f;

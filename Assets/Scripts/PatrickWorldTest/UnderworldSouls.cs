@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UnderworldSouls : MonoBehaviour
 {
-    [SerializeField] private EventTartare _eventTartare = null;
+    [SerializeField] private EventUnderworld _eventUnderworld = null;
     private ParticleSystem _underworldSoulFlow;
     [SerializeField] private DoorSouls _doorSouls = null;
     [SerializeField] private EventController _eventController = null;
@@ -27,7 +27,7 @@ public class UnderworldSouls : MonoBehaviour
     {
         ParticleSystem.EmissionModule underworldEmission = _underworldSoulFlow.emission;
         
-        UnderworldSoulsRate = _eventTartare.MutinyCache + _doorSouls.OutputSouls;
+        UnderworldSoulsRate = _eventUnderworld.MutinyCache + _doorSouls.OutputSouls;
         underworldEmission.rateOverTime = UnderworldSoulsRate;
         _eventController.UnderworldRate = _underworldSoulsRate;
     }

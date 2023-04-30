@@ -10,7 +10,6 @@ public class FlameEvent : MonoBehaviour
     [SerializeField] private Transform[] _spawnPos = null;
 
     [SerializeField] private AudioSource _source = null;
-    [SerializeField] private AudioClip _click = null;
 
     void Start()
     {
